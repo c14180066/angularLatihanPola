@@ -1,18 +1,51 @@
-<hello name="{{ name }}"></hello>
 <p>
+  <label>Input:</label>
+  <br>
   <input [(ngModel)] = "a" type="text">
   <input [(ngModel)] = "b" type="text">
-  {{a*b}}
+  <br>
+  <button (click) = "klikButton(a,b)">Calculate</button>
+  <button (click) = "clear()">Clear</button>
+  <br>
+  <label>Hasil: </label>
+  <br>
+  {{data}}
+
 </p>
 
-<ng-template *ngIf="">
+<ng-template *ngIf="temp==1;then polaA; else polaEmpty">
+
+</ng-template>
+<ng-template *ngIf="temp==0;then polaB; else polaEmpty">
 
 </ng-template>
 
 <ng-template #polaA>
-
+  *****o
+  <br>
+  ****oo
+  <br>
+  ***ooo
+  <br>
+  **
+  <br>
+  *
 </ng-template>
 
 <ng-template #polaB>
+  ***
+  <br>
+  ****
+  <br>
+  *****
+  <br>
+  ******
+  <br>
+  *******
+  <br>
+  ********
+</ng-template>
 
+<ng-template #polaEmpty>
+  <p></p>
 </ng-template>
